@@ -32,7 +32,7 @@ public class TestDemoqa extends BaseState {
         $("#subjectsInput").setValue("Computer Science").pressEnter();
         $("#hobbiesWrapper").find(byText("Sports")).click();
         $("#hobbiesWrapper").find(byText("Music")).click();
-        $("#uploadPicture").uploadFile(new File("src/test/resources/picture/wwe.jpg"));
+        $("#uploadPicture").uploadFromClasspath("wwe.jpg");
         $("#currentAddress").setValue("India Dhiraina Village Sirmur District of Himachal Pradesh");
         $("#react-select-3-input").setValue("NCR").pressEnter();
         $("#react-select-4-input").setValue("Gurgaon").pressEnter();
