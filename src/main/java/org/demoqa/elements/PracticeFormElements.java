@@ -81,6 +81,16 @@ public class PracticeFormElements {
      */
     public final SelenideElement closeLargeModal = $("button#closeLargeModal");
 
+    /**
+     * Practice Form. close Large Modal
+     */
+    public final SelenideElement table = $(".table-responsive");
+
+    /**
+     * Practice Form. close Large Modal
+     */
+    public final SelenideElement header = $("#example-modal-sizes-title-lg");
+
 }
 
 

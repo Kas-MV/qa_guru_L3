@@ -1,6 +1,5 @@
 package demoqa;
 
-import org.demoqa.elements.PracticeFormElements;
 import org.demoqa.page.PracticeFormPage;
 import org.demoqa.states.BaseState;
 import org.junit.jupiter.api.DisplayName;
@@ -36,7 +35,17 @@ public class TestDemoqaPracticeForm extends BaseState {
                 .submitBtnClick();
 
         step("3. Проверка формы авторизации на корректность заполнения");
-        registrationForm.checkResultPracticeForm();
+        registrationForm
+                .verifyResultPracticeForm("Student Name", "Dalip Singh")
+                .verifyResultPracticeForm("Student Email", "dalipsingh@wwe.com")
+                .verifyResultPracticeForm("Gender", "Male")
+                .verifyResultPracticeForm("Mobile", "8109111123")
+                .verifyResultPracticeForm("Date of Birth", "27 August,1972")
+                .verifyResultPracticeForm("Subjects", "Maths")
+                .verifyResultPracticeForm("Hobbies", "Sports")
+                .verifyResultPracticeForm("Picture", "wwe.jpg")
+                .verifyResultPracticeForm("Address", "India Dhiraina Village Sirmur District of Himachal Pradesh")
+                .verifyResultPracticeForm("State and City", "NCR Gurgaon");
 
         step("4. Закрыть окно формы авторизации");
         registrationForm.closeLargeModal();

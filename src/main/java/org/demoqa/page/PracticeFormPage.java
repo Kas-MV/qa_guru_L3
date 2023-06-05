@@ -3,23 +3,22 @@ package org.demoqa.page;
 import org.demoqa.elements.PracticeFormElements;
 import org.demoqa.states.BaseState;
 import org.demoqa.util.Calendar;
+import org.demoqa.util.VerifyResult;
 
-import java.util.Arrays;
-
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class PracticeFormPage extends BaseState {
 
     private final PracticeFormElements elements;
     private final Calendar calendar;
+    private final VerifyResult verifyResult;
 
     public PracticeFormPage() {
         elements = new PracticeFormElements();
         calendar = new Calendar();
+        verifyResult = new VerifyResult();
     }
 
     /**
@@ -137,16 +136,19 @@ public class PracticeFormPage extends BaseState {
         elements.submitBtn.click();
     }
 
+    /**
+     * Закрыть окно формы авторизации
+     */
     public void closeLargeModal() {
         elements.closeLargeModal.click();
     }
 
-    public void checkResultPracticeForm() {
-        for (String table : Arrays.asList("Thanks for submitting the form", "Dalip Singh", "dalipsingh@wwe.com",
-                "Male", "8109111123", "27 August,1972", "Maths", "Sports", "wwe.jpg",
-                "India Dhiraina Village Sirmur District of Himachal Pradesh", "NCR Gurgaon")) {
-            $(".modal-content").shouldHave(text(table));
-        }
+    /**
+     * Проверка формы авторизации на корректность заполнения
+     */
+    public PracticeFormPage verifyResultPracticeForm(String key, String value) {
+        verifyResult.checkResultPracticeForm(key, value);
+        return this;
     }
 
     public void checkFormHeader() {
