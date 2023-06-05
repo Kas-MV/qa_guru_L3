@@ -7,6 +7,7 @@ import org.demoqa.util.Calendar;
 import java.util.Arrays;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -146,5 +147,9 @@ public class PracticeFormPage extends BaseState {
                 "India Dhiraina Village Sirmur District of Himachal Pradesh", "NCR Gurgaon")) {
             $(".modal-content").shouldHave(text(table));
         }
+    }
+
+    public void checkFormHeader() {
+        elements.formHeader.shouldBe(visible);
     }
 }

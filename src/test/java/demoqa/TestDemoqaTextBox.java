@@ -7,21 +7,19 @@ import org.demoqa.states.BaseState;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.visible;
 import static io.qameta.allure.Allure.step;
 
 public class TestDemoqaTextBox extends BaseState {
 
     private static final DemoqaHelper helper = new DemoqaHelper();
     TextBoxPage textBoxPage = new TextBoxPage();
-    TextBoxElements textBoxElements = new TextBoxElements();
 
     @Test
     @DisplayName("Тест_Demoqa_Text Box")
     void testTextBox() {
         step("1.Открыть окно Text Box");
         textBoxPage.openPageTextBox();
-        textBoxElements.formHeader.shouldHave(visible);
+        textBoxPage.checkFormHeader();
 
         step("2. Заполнить форму регистрации, нажать кнопку Submit");
         textBoxPage

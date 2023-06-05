@@ -4,6 +4,7 @@ import org.demoqa.elements.TextBoxElements;
 import org.demoqa.states.BaseState;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.open;
 
 public class TextBoxPage extends BaseState {
@@ -71,5 +72,9 @@ public class TextBoxPage extends BaseState {
         textBoxElements.outputEmail.shouldHave(text(email));
         textBoxElements.outputCurrentAddress.shouldHave(text(currentAddress));
         textBoxElements.outputPermanentAddress.shouldHave(text(permanentAddress));
+    }
+
+    public void checkFormHeader() {
+        textBoxElements.formHeader.shouldHave(visible);
     }
 }

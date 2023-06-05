@@ -1,26 +1,23 @@
 package demoqa;
 
 import org.demoqa.elements.PracticeFormElements;
-import org.demoqa.elementsHelper.DemoqaHelper;
 import org.demoqa.page.PracticeFormPage;
 import org.demoqa.states.BaseState;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.visible;
 import static io.qameta.allure.Allure.step;
 
 public class TestDemoqaPracticeForm extends BaseState {
 
     PracticeFormPage registrationForm = new PracticeFormPage();
-    PracticeFormElements elements = new PracticeFormElements();
 
     @Test
     @DisplayName("Тест_Demoqa_Practise Form")
     void testPracticeForm() {
         step("1. Открыть окно Practice Form");
         registrationForm.openPage();
-        elements.formHeader.shouldBe(visible);
+        registrationForm.checkFormHeader();
 
         step("2. Заполнить форму регистрации, нажать кнопку Submit");
         registrationForm
