@@ -1,7 +1,6 @@
 package demoqa;
 
-import org.demoqa.elements.TextBoxElements;
-import org.demoqa.elementsHelper.DemoqaHelper;
+import org.demoqa.elementsHelper.DemoqaHelperTextBox;
 import org.demoqa.page.TextBoxPage;
 import org.demoqa.states.BaseState;
 import org.junit.jupiter.api.DisplayName;
@@ -11,7 +10,7 @@ import static io.qameta.allure.Allure.step;
 
 public class TestDemoqaTextBox extends BaseState {
 
-    private static final DemoqaHelper helper = new DemoqaHelper();
+    private static final DemoqaHelperTextBox helperTextBox = new DemoqaHelperTextBox();
     TextBoxPage textBoxPage = new TextBoxPage();
 
     @Test
@@ -23,15 +22,15 @@ public class TestDemoqaTextBox extends BaseState {
 
         step("2. Заполнить форму регистрации, нажать кнопку Submit");
         textBoxPage
-                .setFullName(helper.getName())
-                .setEmail(helper.getEmail())
-                .setCurrentAddress(helper.getCurrentAddress())
-                .setPermanentAddress(helper.getPermanentAddress())
+                .setFullName(helperTextBox.getName())
+                .setEmail(helperTextBox.getEmail())
+                .setCurrentAddress(helperTextBox.getCurrentAddress())
+                .setPermanentAddress(helperTextBox.getPermanentAddress())
                 .clickButtonSubmit();
 
         step("3. Проверка формы авторизации");
         textBoxPage
-                .checkResult(helper.getName(), helper.getEmail(),
-                        helper.getCurrentAddress(), helper.getPermanentAddress());
+                .checkResult(helperTextBox.getName(), helperTextBox.getEmail(),
+                        helperTextBox.getCurrentAddress(), helperTextBox.getPermanentAddress());
     }
 }

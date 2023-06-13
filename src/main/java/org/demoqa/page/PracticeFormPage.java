@@ -1,9 +1,14 @@
 package org.demoqa.page;
 
+import com.github.javafaker.Faker;
 import org.demoqa.elements.PracticeFormElements;
+import org.demoqa.elementsHelper.DemoqaHelperPracticeForm;
 import org.demoqa.states.BaseState;
 import org.demoqa.util.Calendar;
 import org.demoqa.util.VerifyResult;
+
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
@@ -14,6 +19,8 @@ public class PracticeFormPage extends BaseState {
     private final PracticeFormElements elements;
     private final Calendar calendar;
     private final VerifyResult verifyResult;
+    private static DemoqaHelperPracticeForm helperPracticeForm = new DemoqaHelperPracticeForm();
+    Faker faker = new Faker();
 
     public PracticeFormPage() {
         elements = new PracticeFormElements();
@@ -73,9 +80,18 @@ public class PracticeFormPage extends BaseState {
     /**
      * Ввод в поле Birth Date
      */
-    public PracticeFormPage setBirthDate(String day, String month, String year) {
+    public PracticeFormPage setBirthDate() {
+        SimpleDateFormat dayFormat = new SimpleDateFormat("dd");
+        SimpleDateFormat monthsFormat = new SimpleDateFormat("MMMM", Locale.ENGLISH);
+        SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy", Locale.ENGLISH);
+        String day = dayFormat.format(faker.date().birthday());
+        String month = monthsFormat.format(faker.date().birthday());
+        String year = yearFormat.format(faker.date().birthday());
+        helperPracticeForm.setDay(day);
+        helperPracticeForm.setMonth(month);
+        helperPracticeForm.setYear(year);
         elements.birthDay.click();
-        calendar.setDateOfBirth(day, month, year);
+        calendar.setDateOfBirth(helperPracticeForm.getDay(), helperPracticeForm.getMonth(), helperPracticeForm.getYear());
         return this;
     }
 

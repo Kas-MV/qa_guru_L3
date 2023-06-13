@@ -1,10 +1,10 @@
 package org.demoqa.elementsHelper;
 
-public class DemoqaHelper {
+public class DemoqaHelperTextBox {
 
     private String name, email, currentAddress, permanentAddress;
 
-    public DemoqaHelper() {
+    public DemoqaHelperTextBox() {
         name = "Isaac Newton";
         email = "newtonthebest@isaac.com";
         currentAddress = "Woolsthorpe Manor, Lincolnshire, Kingdom of England";
