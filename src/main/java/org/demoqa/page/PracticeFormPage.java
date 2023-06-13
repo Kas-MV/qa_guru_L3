@@ -81,15 +81,7 @@ public class PracticeFormPage extends BaseState {
      * Ввод в поле Birth Date
      */
     public PracticeFormPage setBirthDate() {
-        SimpleDateFormat dayFormat = new SimpleDateFormat("dd");
-        SimpleDateFormat monthsFormat = new SimpleDateFormat("MMMM", Locale.ENGLISH);
-        SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy", Locale.ENGLISH);
-        String day = dayFormat.format(faker.date().birthday());
-        String month = monthsFormat.format(faker.date().birthday());
-        String year = yearFormat.format(faker.date().birthday());
-        helperPracticeForm.setDay(day);
-        helperPracticeForm.setMonth(month);
-        helperPracticeForm.setYear(year);
+        randomDateBirth();
         elements.birthDay.click();
         calendar.setDateOfBirth(helperPracticeForm.getDay(), helperPracticeForm.getMonth(), helperPracticeForm.getYear());
         return this;
@@ -169,5 +161,17 @@ public class PracticeFormPage extends BaseState {
 
     public void checkFormHeader() {
         elements.formHeader.shouldBe(visible);
+    }
+
+    public void randomDateBirth() {
+        SimpleDateFormat dayFormat = new SimpleDateFormat("dd");
+        SimpleDateFormat monthsFormat = new SimpleDateFormat("MMMM", Locale.ENGLISH);
+        SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy", Locale.ENGLISH);
+        String day = dayFormat.format(faker.date().birthday());
+        String month = monthsFormat.format(faker.date().birthday());
+        String year = yearFormat.format(faker.date().birthday());
+        helperPracticeForm.setDay(day);
+        helperPracticeForm.setMonth(month);
+        helperPracticeForm.setYear(year);
     }
 }
