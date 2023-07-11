@@ -52,8 +52,5 @@ public class TestDemoqaPracticeFormRemote extends RemoteBaseState {
                     .verifyResultPracticeForm("Address", helperPracticeForm.getCurrentAddress())
                     .verifyResultPracticeForm("State and City", helperPracticeForm.getState() + " " + helperPracticeForm.getCity());
         });
-
-        step("4. Закрыть окно формы авторизации", () ->
-                registrationForm.closeLargeModal());
     }
 }
