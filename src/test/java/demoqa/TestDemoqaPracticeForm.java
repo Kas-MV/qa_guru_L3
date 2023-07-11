@@ -4,6 +4,7 @@ import org.demoqa.elementsHelper.DemoqaHelperPracticeForm;
 import org.demoqa.page.PracticeFormPage;
 import org.demoqa.states.BaseState;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
@@ -14,6 +15,7 @@ public class TestDemoqaPracticeForm extends BaseState {
     DemoqaHelperPracticeForm helperPracticeForm = new DemoqaHelperPracticeForm();
 
     @Test
+    @Tag("practice")
     @DisplayName("Тест_Demoqa_Practise Form")
     void testPracticeForm() {
         step("1. Открыть окно Practice Form");

@@ -6,8 +6,31 @@ plugins {
 group 'org.example'
 version '1.0-SNAPSHOT'
 
+def allureVersion = "2.19.0"
+
+allure {
+    report {
+        version.set(allureVersion)
+    }
+    adapter { // отвечает за появление папочки build/allure-results
+        aspectjWeaver.set(true) //обработка аннотации @Step
+        frameworks {
+            junit5 { //название фреймворка
+                adapterVersion.set(allureVersion) //версия интеграции фреймворка и Allure
+            }
+        }
+    }
+}
+
 repositories {
     mavenCentral()
+}
+
+compileJava{
+    options.encoding = 'UTF-8'
+}
+compileTestJava {
+    options.encoding = 'UTF-8'
 }
 
 dependencies {
@@ -25,4 +48,10 @@ tasks.withType(javax.tools.JavaCompiler) {
 
 test {
     useJUnitPlatform()
+}
+
+task simple_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("practice")
+    }
 }
