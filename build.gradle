@@ -60,6 +60,6 @@ test {
 
 task remote_test(type: Test) {
     useJUnitPlatform {
-        includeTags("practice")
+        includeTags("remote")
     }
 }
