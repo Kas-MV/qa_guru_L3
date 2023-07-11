@@ -15,7 +15,7 @@ public class TestDemoqaPracticeForm extends BaseState {
     DemoqaHelperPracticeForm helperPracticeForm = new DemoqaHelperPracticeForm();
 
     @Test
-    @Tag("practice")
+    @Tag("remote")
     @DisplayName("Тест_Demoqa_Practise Form")
     void testPracticeForm() {
         step("1. Открыть окно Practice Form");
