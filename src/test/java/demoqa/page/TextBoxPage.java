@@ -1,7 +1,7 @@
-package org.demoqa.page;
+package demoqa.page;
 
-import org.demoqa.elements.TextBoxElements;
-import org.demoqa.states.BaseState;
+import demoqa.elements.TextBoxElements;
+import demoqa.states.BaseState;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;

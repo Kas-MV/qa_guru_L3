@@ -1,8 +1,8 @@
-package demoqa;
+package demoqa.tests;
 
-import org.demoqa.elementsHelper.DemoqaHelperTextBox;
-import org.demoqa.page.TextBoxPage;
-import org.demoqa.states.BaseState;
+import demoqa.elementsHelper.DemoqaHelperTextBox;
+import demoqa.page.TextBoxPage;
+import demoqa.states.BaseState;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package org.demoqa.elementsHelper;
+package demoqa.elementsHelper;
 
 public class DemoqaHelperTextBox {
 

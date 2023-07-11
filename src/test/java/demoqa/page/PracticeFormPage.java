@@ -1,12 +1,11 @@
-package org.demoqa.page;
+package demoqa.page;
 
 import com.github.javafaker.Faker;
-import org.demoqa.elements.PracticeFormElements;
-import org.demoqa.elementsHelper.DemoqaHelperPracticeForm;
-import org.demoqa.states.BaseState;
-import org.demoqa.states.RemoteBaseState;
-import org.demoqa.util.Calendar;
-import org.demoqa.util.VerifyResult;
+import demoqa.elements.PracticeFormElements;
+import demoqa.elementsHelper.DemoqaHelperPracticeForm;
+import demoqa.states.RemoteBaseState;
+import demoqa.util.Calendar;
+import demoqa.util.VerifyResult;
 
 import java.text.SimpleDateFormat;
 import java.util.Locale;

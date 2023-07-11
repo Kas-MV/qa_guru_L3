@@ -1,8 +1,8 @@
-package demoqa.allure;
+package demoqa.tests.allure;
 
-import org.demoqa.elementsHelper.DemoqaHelperPracticeForm;
-import org.demoqa.page.PracticeFormPage;
-import org.demoqa.states.RemoteBaseState;
+import demoqa.elementsHelper.DemoqaHelperPracticeForm;
+import demoqa.page.PracticeFormPage;
+import demoqa.states.RemoteBaseState;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;

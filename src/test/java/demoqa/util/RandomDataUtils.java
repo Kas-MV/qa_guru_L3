@@ -1,7 +1,7 @@
-package org.demoqa.util;
+package demoqa.util;
 
 import com.github.javafaker.Faker;
-import org.demoqa.states.BaseState;
+import demoqa.states.BaseState;
 
 import java.security.SecureRandom;
 

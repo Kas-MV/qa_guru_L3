@@ -1,8 +1,8 @@
-package demoqa;
+package demoqa.tests;
 
-import org.demoqa.elementsHelper.DemoqaHelperPracticeForm;
-import org.demoqa.page.PracticeFormPage;
-import org.demoqa.states.BaseState;
+import demoqa.elementsHelper.DemoqaHelperPracticeForm;
+import demoqa.page.PracticeFormPage;
+import demoqa.states.BaseState;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

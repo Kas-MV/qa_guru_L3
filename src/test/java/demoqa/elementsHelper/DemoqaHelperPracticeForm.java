@@ -1,7 +1,7 @@
-package org.demoqa.elementsHelper;
+package demoqa.elementsHelper;
 
 import com.github.javafaker.Faker;
-import org.demoqa.util.RandomDataUtils;
+import demoqa.util.RandomDataUtils;
 
 public class DemoqaHelperPracticeForm {
 

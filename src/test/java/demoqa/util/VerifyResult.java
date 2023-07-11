@@ -1,6 +1,7 @@
-package org.demoqa.util;
+package demoqa.util;
 
-import org.demoqa.elements.PracticeFormElements;
+
+import demoqa.elements.PracticeFormElements;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
