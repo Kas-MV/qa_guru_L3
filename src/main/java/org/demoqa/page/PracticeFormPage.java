@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import org.demoqa.elements.PracticeFormElements;
 import org.demoqa.elementsHelper.DemoqaHelperPracticeForm;
 import org.demoqa.states.BaseState;
+import org.demoqa.states.RemoteBaseState;
 import org.demoqa.util.Calendar;
 import org.demoqa.util.VerifyResult;
 
@@ -14,7 +15,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.open;
 
-public class PracticeFormPage extends BaseState {
+public class PracticeFormPage extends RemoteBaseState {
 
     private final PracticeFormElements elements;
     private final Calendar calendar;
