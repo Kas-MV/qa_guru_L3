@@ -33,7 +33,7 @@ public class PracticeFormPage extends RemoteBaseState {
      */
     public void openPage() {
         open("/automation-practice-form");
-//        closeBanner();
+        closeBanner();
     }
 
     /**
