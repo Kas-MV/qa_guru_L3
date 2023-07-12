@@ -13,7 +13,7 @@ public abstract class BaseState {
     public void init() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
-        Configuration.holdBrowserOpen = false;
+//        Configuration.holdBrowserOpen = true;
         Configuration.pageLoadStrategy = "eager";
     }
 
