@@ -36,10 +36,10 @@ public abstract class RemoteBaseState {
         Configuration.browserCapabilities = capabilities;
     }
 
-//    @BeforeEach
-//    void addListener() {
-//        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-//    }
+    @BeforeEach
+    void addListener() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+    }
 
     @AfterEach
     public void quite() {
