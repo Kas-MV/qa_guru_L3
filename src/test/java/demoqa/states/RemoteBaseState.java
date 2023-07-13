@@ -30,6 +30,8 @@ public abstract class RemoteBaseState {
                 "enableVNC", true,
                 "enableVideo", true
         ));
+
+        Configuration.browserCapabilities = capabilities;
     }
 
     @BeforeEach
