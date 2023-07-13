@@ -19,11 +19,13 @@ public abstract class RemoteBaseState {
 
     @BeforeAll
     static void init() {
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
-        Configuration.pageLoadStrategy = "eager";
+        Configuration.baseUrl = System.getProperty("baseUrl","https://demoqa.com");
+        Configuration.browserSize = System.getProperty("browserSize","1920x1080");
         Configuration.browser = getProperty("browser", "chrome");
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.browserVersion = System.getProperty("browserVersion", "100.0");
+        Configuration.remote = System.getProperty("selenoid");
+        Configuration.pageLoadStrategy = "eager";
+//        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
@@ -34,10 +36,10 @@ public abstract class RemoteBaseState {
         Configuration.browserCapabilities = capabilities;
     }
 
-    @BeforeEach
-    void addListener() {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-    }
+//    @BeforeEach
+//    void addListener() {
+//        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+//    }
 
     @AfterEach
     public void quite() {
