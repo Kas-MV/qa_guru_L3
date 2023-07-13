@@ -46,20 +46,30 @@ dependencies {
 
 }
 
-tasks.withType(javax.tools.JavaCompiler) {
+tasks.withType(javax.tools.JavaCompiler).configureEach {
     option.encoding = 'UTF-8'
 }
 
-tasks.withType(Test) {
-    systemProperties(System.getProperties())
-}
-
-test {
+tasks.withType(Test).configureEach {
     useJUnitPlatform()
+    systemProperties(System.getProperties())
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
 }
 
 task remote_test(type: Test) {
     useJUnitPlatform {
         includeTags("remote")
+    }
+}
+
+task check_property(type: Test) {
+    useJUnitPlatform {
+        includeTags("check")
     }
 }
